@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: examp1_sem3
+
