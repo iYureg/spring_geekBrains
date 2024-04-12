@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+<h1>Products</h1>
+<h2>View products</h2>
+
+<table>
+    <tr>
+        <th>Product name</th>
+        <th>Product price</th>
+    </tr>
+    <tr th:each="product: ${products}">
+        <td th:text="${product.title}"></td>
+        <td th:text="${product.price}"></td>
+    </tr>
+</table>
+
+<h2>Add product</h2>
+<form action="/products" method="post">
+    Name: <input type="text" name="title"><br>
+    Price: <input type="number" step="any" name="price"><br>
+    <button type="submit">add</button>
+</form>
+</body>
+</html>
