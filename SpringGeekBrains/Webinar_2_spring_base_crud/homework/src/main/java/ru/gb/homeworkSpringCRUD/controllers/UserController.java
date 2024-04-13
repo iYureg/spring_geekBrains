@@ -1,5 +1,6 @@
 package ru.gb.homeworkSpringCRUD.controllers;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -12,8 +13,9 @@ import ru.gb.homeworkSpringCRUD.service.UserService;
 import java.util.List;
 
 @Controller
+@AllArgsConstructor
 public class UserController {
-    @Autowired
+
     private UserService userService;
 
     @GetMapping("/users")

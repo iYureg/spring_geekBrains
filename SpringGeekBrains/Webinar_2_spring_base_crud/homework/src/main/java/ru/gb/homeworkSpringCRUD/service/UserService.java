@@ -1,5 +1,6 @@
 package ru.gb.homeworkSpringCRUD.service;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.gb.homeworkSpringCRUD.model.User;
 import ru.gb.homeworkSpringCRUD.repositories.UserRepository;
@@ -7,13 +8,9 @@ import ru.gb.homeworkSpringCRUD.repositories.UserRepository;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
-
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-
 
     public List<User> findAll(){
         return userRepository.findAll();
@@ -27,7 +24,6 @@ public class UserService {
     public void deleteById(int id){
         userRepository.deleteById(id);
     }
-
 
     // update
     public void updateUser(User user){
