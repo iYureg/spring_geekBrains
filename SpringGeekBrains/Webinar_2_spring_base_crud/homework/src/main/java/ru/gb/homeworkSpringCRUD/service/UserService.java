@@ -29,4 +29,8 @@ public class UserService {
     public void updateUser(User user){
         userRepository.updateUser(user);
     }
+
+    public User getUserById(Integer id) {
+        return userRepository.getUserById(id);
+    }
 }

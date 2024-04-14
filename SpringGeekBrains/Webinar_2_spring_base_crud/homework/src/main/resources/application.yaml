@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: SimpleSpringCRUD
+
+db:
+  findAll: SELECT * FROM userTable
+  save: INSERT INTO userTable (firstName,lastName) VALUES ( ?, ?)
+  delete: DELETE FROM userTable WHERE id=?
+  get: SELECT * FROM userTable WHERE id=?
+  update: UPDATE userTable set firstName=?, lastName=? WHERE id=?
