@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <link rel="stylesheet" href="static/styles.css" type="text/css">
+    <title>File Upload</title>
+</head>
+<body>
+<h1>Upload files</h1>
+
+<form th:action="@{/api/files/{partNumber}(partNumber={partNumber})}" th:object="${file}" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="file" required>
+    <input type="submit" value="Upload File">
+</form>
+
+
+</body>
+</html>
