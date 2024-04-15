@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: example2_sem5
+
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
