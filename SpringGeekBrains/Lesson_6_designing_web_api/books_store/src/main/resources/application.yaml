@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: books_store
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgresdb
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
