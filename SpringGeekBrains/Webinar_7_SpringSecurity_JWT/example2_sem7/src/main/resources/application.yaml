@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: example2_sem7
+
+  datasource:
+    initialization-mode: always
