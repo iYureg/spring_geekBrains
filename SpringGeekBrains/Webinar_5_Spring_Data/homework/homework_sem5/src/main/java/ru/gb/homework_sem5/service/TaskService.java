@@ -2,6 +2,7 @@ package ru.gb.homework_sem5.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.gb.homework_sem5.aspect.TrackUserAction;
 import ru.gb.homework_sem5.model.Task;
 import ru.gb.homework_sem5.repository.TaskRepository;
 
@@ -12,14 +13,19 @@ import java.util.List;
 public class TaskService {
     private final TaskRepository taskRepository;
 
+
+    @TrackUserAction
     public Task addTask(Task task) {
         return taskRepository.save(task);
     }
 
+
+    @TrackUserAction
     public List<Task> getAllTasks() {
         return taskRepository.findAll();
     }
 
+    @TrackUserAction
     public List<Task> getTasksByStatus(Task.TaskStatus status) {
         return taskRepository.findByStatus(status);
     }
@@ -31,6 +37,7 @@ public class TaskService {
         return taskRepository.save(optionalTask);
     }
 
+    @TrackUserAction
     public void deleteTaskById(Long id) {
         taskRepository.deleteById(id);
     }
