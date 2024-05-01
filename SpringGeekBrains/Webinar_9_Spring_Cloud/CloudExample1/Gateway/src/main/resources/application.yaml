@@ -11,7 +11,13 @@ spring:
           uri: http://localhost:8081/
           predicates:
             - Path=/service1/**
+
         - id: Microservice2
           uri: http://localhost:8082/
           predicates:
             - Path=/service2/**
+
+        - id: SimpleSpringCRUD
+          uri: http://localhost:8083/
+          predicates:
+            - Path=/users/**

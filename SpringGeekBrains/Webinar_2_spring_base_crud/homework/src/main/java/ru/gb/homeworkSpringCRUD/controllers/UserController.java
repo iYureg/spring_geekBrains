@@ -14,11 +14,12 @@ import java.util.List;
 
 @Controller
 @AllArgsConstructor
+@RequestMapping("/users")
 public class UserController {
 
     private UserService userService;
 
-    @GetMapping("/users")
+    @GetMapping
     public String findAll(Model model){
         List<User> users = userService.findAll();
 
@@ -28,19 +29,19 @@ public class UserController {
         //return "home.html";
     }
 
-    @GetMapping("/user-create")
+    @GetMapping("/create")
     public String createUserForm(User user){
         return "user-create";
     }
 
-    @PostMapping("/user-create")
+    @PostMapping("/create")
     public String createUser(User user){
         userService.saveUser(user);
         return "redirect:/users";
     }
 
     //@GetMapping("user-delete/{id}")
-    @GetMapping("/user-delete/{id}")
+    @GetMapping("/delete/{id}")
     public String deleteUserById(User user){
         userService.deleteById(user.getId());
         return "redirect:/users";
@@ -48,7 +49,7 @@ public class UserController {
 
 
     // update user by id
-    @GetMapping("/user-update/{id}")
+    @GetMapping("/update/{id}")
     public String updateUserForm(User user) {
 
         // mapping to update form page
@@ -57,7 +58,7 @@ public class UserController {
 
 
     // update user form page
-    @PostMapping("/user-update")
+    @PostMapping("/update")
     public String updateUser(User user){
         userService.updateUser(user);
         // redirect to userlist
