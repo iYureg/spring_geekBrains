@@ -1,10 +1,12 @@
 package ru.gb.lesson10_spring_testing.service;
 
 import org.aspectj.lang.annotation.Before;
-<<<<<<< HEAD
+
+
 import org.junit.Test;
-=======
->>>>>>> origin/main
+
+
+
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -32,11 +34,11 @@ public class NoteServiceTest {
         MockitoAnnotations.initMocks(this);
     }
 
-<<<<<<< HEAD
+
+
+
 
     @Test
-=======
->>>>>>> origin/main
     public void getAllNotesTest() {
         Note note = new Note();
         note.setTitle("Test Title");
